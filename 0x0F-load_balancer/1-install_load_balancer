@@ -9,17 +9,16 @@ sudo apt-get install -y haproxy
 
 echo "
 frontend myfrontend
-        bind 0.0.0.0:80
-        default_backend myservers
+	bind 0.0.0.0:80
+	default_backend myservers
 
 backend myservers
-        # Use each server in turn, according to its weight value
-        balance roundrobin
-        server 4465-web-01 3.84.114.176:80 check
-       	server 4465-web-02 3.82.38.127:80 check
+	# Use each server in turn, according to its weight value
+	balance roundrobin
+	server 4465-web-01 3.84.114.176:80 check
+	server 4465-web-02 3.82.38.127:80 check
 
-"
-printf "${backend} | sudo tee /etc/haproxy/haproxy.cfg
+" | sudo tee /etc/haproxy/haproxy.cfg
 
 # Restart HAproxy Server
 sudo service haproxy restart
