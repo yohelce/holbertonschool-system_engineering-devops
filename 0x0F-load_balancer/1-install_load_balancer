@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 # Configures a new Ubuntu server with a HAproxy load-balancer
 
-sudo apt-get -y install --no-install-recommends software-properties-common
-sudo add-apt-repository -y ppa:vbernat/haproxy-2.0
 sudo apt-get -y update
-sudo apt-get -y install haproxy=2.0.\*
+sudo apt-get -y upgrade
+sudo apt-get install -y --no-install-recommends software-properties-common
+sudo add-apt-repository ppa:vbernat/haproxy-2.4
+sudo apt-get install -y haproxy
 server1 = "4465-web-01 3.84.114.176"
 server2 = "4465-web-02 3.82.38.127"
 frontend = "\nfrontend myfrontend\n\tbind 0.0.0.0:80\n\tdefault_backend myservers\n"
