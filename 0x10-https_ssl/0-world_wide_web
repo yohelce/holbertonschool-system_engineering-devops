@@ -4,11 +4,12 @@
 my_func () {
     if [ "$1" ] && [ "$2" ]
     then
-        dig $2.$1 | grep -A1 'ANSWER SECTION:' | grep -v 'ANSWER SECTION:' | awk -v arg="$2" '{print "The subdomain " arg " is a " $4 " record and points to " $5 }'
+        dig $2.$1 | grep -A1 ';; ANSWER SECTION:' | grep -v ';; ANSWER SECTION:' | awk -v arg="$2" '{print "The subdomain " arg " is a " $4 " record and points to " $5 }'
     elif [ "$1" ]
     then
-        for subdomain in www lb-01 web-01 web-02;do
-            dig $subdomain."$1" | grep -A1 'ANSWER SECTION:' | grep -v 'ANSWER SECTION:' | awk -v var="$subdomain" '{print "The subdomain " var " is a " $4 " record and points to " $5 }'
+        for subdomain in www lb-01 web-01 web-02
+        do
+            dig $subdomain."$1" | grep -A1 ';; ANSWER SECTION:' | grep -v ';; ANSWER SECTION:' | awk -v var="$subdomain" '{print "The subdomain " var " is a " $4 " record and points to " $5 }'
         done
     fi
 }
