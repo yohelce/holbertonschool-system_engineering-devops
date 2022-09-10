@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Runs Nginx as Nginx
+# This scrpti runs Nginx as Nginx
+
 pkill apache2
 chown nginx:nginx /etc/nginx/nginx.conf
 chmod 700 /etc/nginx/nginx.conf
