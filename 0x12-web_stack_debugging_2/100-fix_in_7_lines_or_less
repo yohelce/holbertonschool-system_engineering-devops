@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This scrpti runs Nginx as Nginx in 7 lines
+chown nginx:nginx /etc/nginx/nginx.conf
+chmod 700 /etc/nginx/nginx.conf
+sed -i 's/80/8080/g' /etc/nginx/sites-available/default
+sudo -u nginx service nginx start
