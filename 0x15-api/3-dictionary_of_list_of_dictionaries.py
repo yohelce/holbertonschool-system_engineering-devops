@@ -23,5 +23,5 @@ if __name__ == "__main__":
                 data_user.append(task_dict)
         data[user.get('id')] = data_user
 
-with open(filename, mode='w') as f:
-    json.dump(data, f)
+    with open(filename, mode='w') as f:
+        json.dump(data, f)
