@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-""" This script exports data in the JSON format"""
+"""Python script to export data in the JSON format records
+all tasks from all employees"""
 import json
 import requests
+import sys
 
 if __name__ == "__main__":
     filename = 'todo_all_employees.json'
