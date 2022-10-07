@@ -1,0 +1,68 @@
+Last login: Fri Oct  7 11:42:39 on ttys001
+/Users/yohelcruz/.zshrc:104: command not found: starship
+(base) ➜  0x1A-application_server git:(main) ✗ ssh ubuntu_server
+Welcome to Ubuntu 20.04.5 LTS (GNU/Linux 5.15.0-1020-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Oct  7 16:44:53 UTC 2022
+
+  System load:  0.0                Processes:                110
+  Usage of /:   27.4% of 19.31GB   Users logged in:          1
+  Memory usage: 47%                IPv4 address for docker0: 172.17.0.1
+  Swap usage:   0%                 IPv4 address for eth0:    10.250.30.122
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+10 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+New release '22.04.1 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+2 updates could not be installed automatically. For more details,
+see /var/log/unattended-upgrades/unattended-upgrades.log
+
+Last login: Fri Oct  7 16:43:17 2022 from 179.6.73.45
+ubuntu@4465-web-01:~$ curl 127.0.0.1/airbnb-onepage/
+Hello HBNB!ubuntu@4465-web-01:~$ sudo vim /etc/nginx/sites-available/default 
+ubuntu@4465-web-01:~$ sudo service nginx restart
+ubuntu@4465-web-01:~$ sudo vim /etc/nginx/sites-available/default 
+ubuntu@4465-web-01:~$ sudo vim /etc/nginx/sites-available/default 
+
+        #       fastcgi_pass 127.0.0.1:9000;
+        #}
+
+        # deny access to .htaccess files, if Apache's document root
+        # concurs with nginx's one
+        #
+        #location ~ /\.ht {
+        #       deny all;
+        #}
+}
+
+
+# Virtual Host configuration for example.com
+#
+# You can move that to a different file under sites-available/ and symlink that
+# to sites-enabled/ to enable it.
+#
+#server {
+#       listen 80;
+#       listen [::]:80;
+#
+#       server_name example.com;
+#
+#       root /var/www/example.com;
+#       index index.html;
+#
+#       location / {
+#               try_files $uri $uri/ =404;
+#       }
+#}
